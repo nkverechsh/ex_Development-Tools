@@ -1,32 +1,38 @@
-import game from "./game.js";
+import game from "./game.js"
 
-let level = loadLevel();
+let level = loadLevel()
 
 function saveLevel(newLevel) {
-  localStorage.setItem("level", JSON.stringify(newLevel));
+    localStorage.setItem("level", JSON.stringify(newLevel))
 }
 
 function loadLevel() {
-  return localStorage.getItem("level")
-    ? JSON.parse(localStorage.getItem("level"))
-    : "easy";
+    return localStorage.getItem("level")
+        ? JSON.parse(localStorage.getItem("level"))
+        : "easy"
 }
 
 function startPage() {
-  const add = document.querySelector("#add");
-  const html = `
+    const add = document.querySelector("#add")
+    const html = `
         <div class="complexity">
         <h1 class="complexity__text">Выбери</br>сложность</h1>
 
       <div class="complexity__level">
           <button class="complexity__level_variant complexity__level_variant_easy">
-          <input type="radio" ${loadLevel() === 'easy' ? 'checked' : null} name="checkbox" value="easy">
+          <input type="radio" ${
+              loadLevel() === "easy" ? "checked" : null
+          } name="checkbox" value="easy">
           <span>1</span></button>
           <button class="complexity__level_variant complexity__level_variant_medium">
-          <input type="radio" ${loadLevel() === 'medium' ? 'checked' : null} name="checkbox" value="medium">
+          <input type="radio" ${
+              loadLevel() === "medium" ? "checked" : null
+          } name="checkbox" value="medium">
           <span>2</span></button>
           <button class="complexity__level_variant complexity__level_variant_hard">
-          <input type="radio" ${loadLevel() === 'hard' ? 'checked' : null} name="checkbox" value="hard">
+          <input type="radio" ${
+              loadLevel() === "hard" ? "checked" : null
+          } name="checkbox" value="hard">
           <span>3</span></button>
       </div>
 
@@ -34,21 +40,21 @@ function startPage() {
               <p class="start__game_text">Старт</p>	
           </button>
         </div>
-    `;
-  add.innerHTML = html;
+    `
+    add.innerHTML = html
 
-  document
-    .querySelector(".complexity__level_variant_easy")
-    .addEventListener("click", () => saveLevel("easy"));
-  document
-    .querySelector(".complexity__level_variant_medium")
-    .addEventListener("click", () => saveLevel("medium"));
-  document
-    .querySelector(".complexity__level_variant_hard")
-    .addEventListener("click", () => saveLevel("hard"));
-  document
-    .querySelector(".start__game")
-    .addEventListener("click", () => game());
+    document
+        .querySelector(".complexity__level_variant_easy")
+        .addEventListener("click", () => saveLevel("easy"))
+    document
+        .querySelector(".complexity__level_variant_medium")
+        .addEventListener("click", () => saveLevel("medium"))
+    document
+        .querySelector(".complexity__level_variant_hard")
+        .addEventListener("click", () => saveLevel("hard"))
+    document
+        .querySelector(".start__game")
+        .addEventListener("click", () => game())
 }
 
-startPage();
+startPage()
