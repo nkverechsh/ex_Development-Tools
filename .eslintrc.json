@@ -13,7 +13,6 @@
     "rules": {
         "prettier/prettier": "error",
         "camelcase": ["error"],
-        "eqeqeq": ["error", "always"],
-        "selector-class-pattern": null
+        "eqeqeq": ["error", "always"]
     }
 }
