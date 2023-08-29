@@ -1,7 +1,5 @@
 import game from "./game.js"
 
-let level = loadLevel()
-
 function saveLevel(newLevel) {
     localStorage.setItem("level", JSON.stringify(newLevel))
 }

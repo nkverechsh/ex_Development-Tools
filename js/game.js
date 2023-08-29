@@ -1,4 +1,4 @@
-import { cardsPlay, cardsShirt } from "./cards.js";
+import { cardsPlay, cardsShirt } from "./cards.js"
 
 export default function game() {
     function Cards(card) {
@@ -28,7 +28,7 @@ export default function game() {
 
         `
 
-            document.querySelector("#add").innerHTML = html
+        document.querySelector("#add").innerHTML = html
     }
 
     const level = JSON.parse(localStorage.getItem("level"))

@@ -1,137 +1,134 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
-  font-family: StratosSkyeng, sans-serif;
-  font-weight: 400;
-  src:
-    url("/fonts/stratosskyengweb-semilight.woff2") format("woff2"),
-    url("/fonts/stratosskyengweb-semilight.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: StratosSkyeng, sans-serif;
+    font-weight: 400;
+    src:
+        url("/fonts/stratosskyengweb-semilight.woff2") format("woff2"),
+        url("/fonts/stratosskyengweb-semilight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-  font-family: StratosSkyeng, sans-serif;
+    font-family: StratosSkyeng, sans-serif;
 }
 
 .center {
-  padding-left: calc(50% - 512px);
-  padding-right: calc(50% - 512px);
+    padding-left: calc(50% - 512px);
+    padding-right: calc(50% - 512px);
 }
 
 .complexity__box {
-
-  background-color: #004980;
-  padding: 158px 272px;
+    background-color: #004980;
+    padding: 158px 272px;
 }
 
 .complexity {
-  width: 480px;
-  height: 459px;
-  background-color: #c2f5ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  border-radius: 12px;
+    width: 480px;
+    height: 459px;
+    background-color: #c2f5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
 }
 
 .complexity__text {
-  text-align: center;
-  color: #004980;
-  margin: 52px 136px 48px;
-  font-family: StratosSkyeng, sans-serif;
-  font-size: 40px;
-  font-weight: 400;
+    text-align: center;
+    color: #004980;
+    margin: 52px 136px 48px;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 .complexity__level {
-  display: flex;
-  gap: 26px;
+    display: flex;
+    gap: 26px;
 }
 
 .complexity__level_variant {
-  font-family: StratosSkyeng, sans-serif;
-  font-size: 64px;
-  font-weight: 400;
-  color: #0080c1;
-  margin-bottom: 67px;
-  height: 98px;
-  width: 98px;
-  border: none;
-  background-color: #fff;
-  border-radius: 12px;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: #0080c1;
+    margin-bottom: 67px;
+    height: 98px;
+    width: 98px;
+    border: none;
+    background-color: #fff;
+    border-radius: 12px;
 }
 
 .start__game {
-  width: 246px;
-  height: 48px;
-  border: none;
-  background-color: #7ac100;
-  border-radius: 12px;
+    width: 246px;
+    height: 48px;
+    border: none;
+    background-color: #7ac100;
+    border-radius: 12px;
 }
 
 .start__game_text {
-  font-family: StratosSkyeng, sans-serif;
-  font-size: 24px;
-  color: #fff;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    color: #fff;
 }
 
 .game-page {
-  width: 1024px;
-  height: 774px;
-  margin-top: 41px;
+    width: 1024px;
+    height: 774px;
+    margin-top: 41px;
 }
 
 .game-page__title {
-  margin-bottom: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .game-page__timer {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 
 .game-page__time {
-      font-family: StratosSkyeng;
-      font-size: 64px;
-      font-weight: 400;
-      line-height: 72px;
-      color: #fff;
-  }
-
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    color: #fff;
+}
 
 .game-page__timer-min {
-  font-family: StratosSkyeng, sans-serif;
-  padding-left: 39px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-  color: #fff;
+    font-family: StratosSkyeng, sans-serif;
+    padding-left: 39px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #fff;
 }
 
 .repeat-key {
-  width: 246px;
-  height: 50px;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  text-align: center;
-  color: #fff;
-  background: #7ac100;
-  border: none;
-  border-radius: 12px;
+    width: 246px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    background: #7ac100;
+    border: none;
+    border-radius: 12px;
 }
 
 .game-page__cards {
-  gap: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
+    gap: 15px;
+    display: flex;
+    flex-flow: row wrap;
 }
