@@ -7,16 +7,17 @@
 }
 
 @font-face {
-    font-family: "StratosSkyeng", sans-serif;
+    font-family: StratosSkyeng, sans-serif;
     font-weight: 400;
-    src: url('/fonts/stratosskyengweb-semilight.woff2') format('woff2'),
-    url('/fonts/stratosskyengweb-semilight.woff') format('woff');
+    src:
+        url("/fonts/stratosskyengweb-semilight.woff2") format("woff2"),
+        url("/fonts/stratosskyengweb-semilight.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: "StratosSkyeng", sans-serif;
+    font-family: StratosSkyeng, sans-serif;
 }
 
 .center {
@@ -25,7 +26,7 @@ body {
 }
 
 .complexity__box {
-    width: 1024px;
+
     background-color: #004980;
     padding: 158px 272px;
 }
@@ -33,12 +34,11 @@ body {
 .complexity {
     width: 480px;
     height: 459px;
-    background-color: #C2F5FF;
+    background-color: #c2f5ff;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: none;
-    box-sizing: border-box;
     border-radius: 12px;
 
     &__text {
@@ -52,40 +52,154 @@ body {
 
     &__level {
         display: flex;
-        gap: 26px;
-        box-sizing: border-box;
+        gap: 12px;
 
         &_variant {
             font-family: StratosSkyeng, sans-serif;
             font-size: 64px;
             font-weight: 400;
-            color:  #0080C1;
+            color: #0080c1;
             margin-bottom: 67px;
             height: 98px;
             width: 98px;
             border: none;
-            background-color: #FFFFFF;
-            box-sizing: border-box;
+            background-color: #fff;
             border-radius: 12px;
         }
     }
 }
 
+// .complexity__btn {
+//     display: flex;
+//     gap: 24px;
+//     flex-wrap: wrap;
+// }
+
+// .complexity-radio>input {
+//     position: absolute;
+//     z-index: -1;
+//     opacity: 0;
+// }
+
+// .complexity-radio>span {
+//     display: inline-flex;
+//     align-items: center;
+//     user-select: none;
+// }
+
+// .complexity-radio>span::before {
+//     content: '';
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #0080C1;
+//     font-family: StratosSkyeng;
+//     font-size: 64px;
+//     font-weight: 400;
+//     line-height: 72px;
+//     letter-spacing: 0;
+//     width: 98px;
+//     height: 98px;
+//     border-radius: 12px;
+//     background-color: #fff;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: 50% 50%;
+// }
+
+// .complexity-radio_1>span::before {
+//     content: '1';
+// }
+
+// .complexity-radio_2>span::before {
+//     content: '2';
+// }
+
+// .custom-radio_3>span::before {
+//     content: '3';
+// }
+
+// .complexity-radio>input:not(:disabled):not(:checked)+span:hover::before {
+//     background-color: #e8e8e8;
+// }
+
+// .complexity-radio>input:checked+span::before {
+//     border: solid 2px #7ac100;
+// }
+
 .start__game {
     width: 246px;
     height: 48px;
     border: 0px;
-    background-color: #7AC100;
-    box-sizing: border-box;
+    background-color: #7ac100;
     border-radius: 12px;
 
     &_text {
         font-family: StratosSkyeng, sans-serif;
         font-size: 24px;
-        color: #FFFFFF;
+        color: #fff;
     }
-    
 }
 
+.game-page {
+    margin-top: 41px;
+
+    &__title {
+        margin-bottom: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__timer {
+        padding-right: 10px;
+    }
+
+    &__time {
+        font-family: StratosSkyeng;
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 72px;
+        color: #fff;
+    }
+}
+
+.game-page__timer-min {
+    font-family: StratosSkyeng, sans-serif;
+    padding-left: 39px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #fff;
+
+    &_sec {
+        font-family: StratosSkyeng, sans-serif;
+        padding-left: 57px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        color: #fff;
+    }
+}
+
+.repeat-key {
+    width: 246px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    background: #7ac100;
+    border: none;
+    border-radius: 12px;
+}
+
+.game-page__cards {
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 /*# sourceMappingURL=style.css.map */
