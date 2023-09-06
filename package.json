@@ -7,9 +7,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack-dev-server --open",
-        "build": "NODE_ENV=production webpack",
-        "prod": "cross-env NODE_ENV=production webpack",
-        "dev": "cross-env NODE_ENV=development webpack",
+        "build": "cross-env NODE_ENV=production webpack",
         "format": "prettier --write ./",
         "lint:js": "eslint ./src/js/*.js --fix",
         "lint:css": "stylelint ./src/*.css --fix",

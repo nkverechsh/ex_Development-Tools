@@ -4,11 +4,11 @@ const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const mode = process.env.NODE_ENV === "production" ? "production" : "development";
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: "./src/js/startPage.js",
-  mode,
+  mode: isProduction ? "production" : "development",
   module: {
     rules: [
       {
@@ -27,7 +27,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      '...',
+      "...",
       new CssMinimizerPlugin(),
     ],
   },
