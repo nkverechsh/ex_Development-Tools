@@ -1,4 +1,6 @@
-import game from "./game.js"
+import '../../index.css';
+import game from "./game.js";
+
 
 function saveLevel(newLevel) {
     localStorage.setItem("level", JSON.stringify(newLevel))
