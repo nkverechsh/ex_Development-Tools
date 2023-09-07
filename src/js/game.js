@@ -1,4 +1,4 @@
-import { cardsGrade, cardsSuit } from "./js/cards.js"
+import { cardsGrade, cardsSuit } from "./cards.js"
 
 export default function game() {
     function renderCards (card) {
