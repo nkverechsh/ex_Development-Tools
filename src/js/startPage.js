@@ -6,8 +6,10 @@ function saveLevel(newLevel) {
     localStorage.setItem("level", JSON.stringify(newLevel))
 }
 
-function loadLevel() {
-    return localStorage.getItem("level") ? JSON.parse(localStorage.getItem("level")) : "easy"
+function loadLevel(): string {
+    return localStorage.getItem('level')
+        ? JSON.parse(localStorage.getItem('level')!)
+        : 'easy'
 }
 
 function startPage() {
