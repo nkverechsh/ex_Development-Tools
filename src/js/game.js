@@ -1,13 +1,19 @@
-import { cardsPlay, cardsShirt } from "./cards.js"
+import { cardsGrade, cardsSuit } from "./js/cards.js"
 
 export default function game() {
-    function Cards(card) {
-        const htmlCards = `<img src="${card.img}" alt="card">`
-
-        document
-            .querySelector(".game-page__cards")
-            .insertAdjacentHTML("afterbegin", htmlCards)
-    }
+    function renderCards (card) {
+        const htmlCards = `
+        <div class="play-card">
+            <p class="play-card__text play-card__text_head">${card.cardsGrade}</p>
+            <img class="play-card__back none" src="./../../static/img/card-back.svg" alt="">
+            <img class="play-card__img play-card__img_head" src="./static/img/${card.cardsSuit}.svg" alt="">
+            <img class="play-card__img play-card__img_middle" src="./static/img/${card.cardsSuit}.svg" alt="">
+            <img class="play-card__img play-card__img_footer" src="./static/img/${card.cardsSuit}.svg" alt="">
+            <p class="play-card__text play-card__text_footer">${card.cardsGrade}</p>
+    </div>
+`
+document.querySelector('.next-page__cards').insertAdjacentHTML('afterbegin', htmlCards)
+}
 
     function renderContainer() {
         const html = `
@@ -32,33 +38,80 @@ export default function game() {
     }
 
     const level = JSON.parse(localStorage.getItem("level"))
-    let cards = cardsShirt
 
-    setTimeout(() => {
-        cards = cardsPlay
-
-        if (level === "easy") {
-            console.log("easy")
+    function shuffle(cards) {
+        const shuffleArray = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
         }
 
-        if (level === "medium") {
-            console.log("medium")
-        }
+        const shuffledCards = shuffleArray(cardsGrade.flatMap(grade => cardsSuit.map(suit => ({ cardsGrade: grade, cardsSuit: suit }))))
+        const selectedCards = shuffledCards.slice(0, cards)
+        const duplicatedCards = shuffleArray([...selectedCards, ...selectedCards])
 
-        if (level === "hard") {
-            console.log("hard")
-        }
+        renderPage(duplicatedCards)
+    }
 
-        renderPage()
-    }, 500)
+    switch (level) {
+        case 'easy':
+            shuffle(3)
+        break;
 
-    function renderPage() {
-        renderContainer()
+        case 'medium':
+            shuffle(6)
+        break;
 
-        cards.forEach((card) => {
-            Cards(card)
+        case 'hard':
+            shuffle(9)
+        break;
+    }
+
+    const findCards = document.querySelectorAll('.play-card__back')
+    for (const card of findCards) {
+        card.addEventListener('click', () => {
+            card.classList.add('none')
         })
     }
 
-    renderPage()
+    const cards = Array.from(document.querySelectorAll('.play-card'));
+
+    cards.forEach((card) => card.addEventListener('click', () => {
+        card.classList.add('open')
+
+        let openCards = cards.filter((card) => card.classList.contains('open'))
+        openCards.forEach((card) => card.classList.add('win-card'))
+        let winCards = cards.filter((card) => card.classList.contains('win-card'))
+        if (winCards.length === cards.length) {
+            console.log('u win');
+        }
+
+        if (openCards.length === 2) {
+            if (openCards[0].getAttribute('data-cardsGrade') === openCards[1].getAttribute('data-cardsGrade') && openCards[0].getAttribute('data-cardsSuit') === openCards[1].getAttribute('data-cardsSuit')) {
+                openCards.forEach((card) => card.classList.remove('open'));
+                return
+            }
+            if (openCards[0].getAttribute('data-cardsGrade') !== openCards[1].getAttribute('data-cardsGrade') && openCards[0].getAttribute('data-cardsSuit') !== openCards[1].getAttribute('data-cardsSuit')) {
+                console.warn('The game is over!');
+                openCards.forEach((card) => card.classList.remove('open'));
+            }
+            openCards = [];
+        }
+    }));
+
+    setTimeout (() => {
+        const hiddenCards = document.querySelectorAll('.play-card__back')
+        hiddenCards.forEach((card) => {
+            card.classList.remove('none')
+        })
+    }, 5000)
+
+    function renderPage(selectedCards) {
+        renderContainer()
+        selectedCards.forEach((card) => {
+        renderCards(card)
+        })
+    }
 }

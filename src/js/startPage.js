@@ -7,9 +7,7 @@ function saveLevel(newLevel) {
 }
 
 function loadLevel() {
-    return localStorage.getItem("level")
-        ? JSON.parse(localStorage.getItem("level"))
-        : "easy"
+    return localStorage.getItem("level") ? JSON.parse(localStorage.getItem("level")) : "easy"
 }
 
 function startPage() {
@@ -45,13 +43,13 @@ function startPage() {
 
     document
         .querySelector(".complexity__level_variant_easy")
-        .addEventListener("click", () => saveLevel("easy"))
+        .addEventListener("change", () => saveLevel("easy"))
     document
         .querySelector(".complexity__level_variant_medium")
-        .addEventListener("click", () => saveLevel("medium"))
+        .addEventListener("change", () => saveLevel("medium"))
     document
         .querySelector(".complexity__level_variant_hard")
-        .addEventListener("click", () => saveLevel("hard"))
+        .addEventListener("change", () => saveLevel("hard"))
     document
         .querySelector(".start__game")
         .addEventListener("click", () => game())
